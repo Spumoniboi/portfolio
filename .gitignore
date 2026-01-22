@@ -1,0 +1,12 @@
+# Cursor and IDE metadata
+.cursor/
+.vscode/
+
+# Terminal logs and system files
+terminals/
+Thumbs.db
+.DS_Store
+
+# Large files or unnecessary logs
+*.log
+node_modules/

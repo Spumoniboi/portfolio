@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CRT Overlay -->
+    <div class="crt-overlay"></div>
+
+    <!-- Desktop -->
+    <div id="desktop">
+        <!-- Desktop Icons -->
+        <div class="icon" data-window="projects">
+            <div class="icon-img">📂</div>
+            <span class="icon-label">PROJECTS.exe</span>
+        </div>
+        <div class="icon" data-window="about">
+            <div class="icon-img">📄</div>
+            <span class="icon-label">about.txt</span>
+        </div>
+        <div class="icon" data-window="camera">
+            <div class="icon-img">📹</div>
+            <span class="icon-label">CAMERA.mov</span>
+        </div>
+        <div class="icon" id="resume-icon">
+            <div class="icon-img">📕</div>
+            <span class="icon-label">resume.pdf</span>
+        </div>
+        <div class="icon" data-window="contact">
+            <div class="icon-img">📧</div>
+            <span class="icon-label">contact.txt</span>
+        </div>
+        <div class="icon" data-window="brick-breaker">
+            <div class="icon-img">🎮</div>
+            <span class="icon-label">BRICK.exe</span>
+        </div>
+        <!-- Windows -->
+        <div id="projects" class="window" style="top: 5%; left: 120px; width: 400px;">
+            <div class="window-header">
+                <span class="window-title">PROJECTS.exe</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="projects">□</button>
+                    <button class="close-btn" data-window="projects">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <p><strong>C:\PROJECTS> dir</strong></p>
+                <ul class="project-list">
+                    <li>
+                        <span class="project-year">2025</span> - <strong class="project-link" onclick="openWindow('heatonist-dialog')">HEATONIST</strong>
+                        <p class="project-desc">Generating 12M+ monthly impressions through community-focused social strategy.</p>
+                    </li>
+                    <li>
+                        <span class="project-year">2024</span> - <strong class="project-link" onclick="openWindow('przm-dialog')">PRZM</strong>
+                        <p class="project-desc">Grew community by 300% through creative strategy for Amazon, Netflix, and Tinder.</p>
+                    </li>
+                    <li>
+                        <span class="project-year">2023</span> - <strong class="project-link" onclick="openWindow('hoek-dialog')">HOEK HOME</strong>
+                        <p class="project-desc">Produced 100+ organic videos, increasing social following by 25%.</p>
+                    </li>
+                    <li>
+                        <span class="project-year">2022</span> - <strong class="project-link" onclick="openWindow('choice-dialog')">CHOICE</strong>
+                        <p class="project-desc">Built 30K+ community from scratch across TikTok, Twitter, and Discord.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="about" class="window about-window" style="top: 5%; left: 70%;">
+            <div class="window-header">
+                <span class="window-title">about.txt</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="about">□</button>
+                    <button class="close-btn" data-window="about">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="about-container">
+                    <img src="profile.png" alt="Simon Jewett" class="about-img">
+                    <div class="about-text">
+                        <p>I help brands grow their digital footprint and try to make the internet a little less boring. That can look like social media or community building, from strategy to shooting and editing content, or working with influencers to make things people actually want to watch. I’ve helped rack up millions of social engagements while building real, engaged communities and scroll-stopping content that doesn’t feel forced. I’ve been nicknamed the Senior Vibe Curator more times than i can count, but at the core, content, culture, and community are the cornerstones of my work. Helping people and brands build those things and earn attention is what i enjoy most.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="camera" class="window" style="top: 50%; left: 15%; width: 480px;">
+            <div class="window-header">
+                <span class="window-title">CAMERA.mov</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="camera">□</button>
+                    <button class="close-btn" data-window="camera">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="vhs-placeholder">
+                    [NO SIGNAL - PLAY]
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="window" style="display: none; top: 40%; left: 45%; width: 300px;">
+            <div class="window-header">
+                <span class="window-title">contact.txt</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="contact">□</button>
+                    <button class="close-btn" data-window="contact">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <p style="margin-bottom: 10px;">Feel free to reach out:</p>
+                <form action="https://formspree.io/f/xgoovkan" method="POST" class="win95-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="_replyto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="win95-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="brick-breaker" class="window" style="top: 20%; left: 30%; width: 440px;">
+            <div class="window-header">
+                <span class="window-title">BRICK.exe</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="brick-breaker">□</button>
+                    <button class="close-btn" data-window="brick-breaker">X</button>
+                </div>
+            </div>
+            <div class="window-content game-window-content">
+                <canvas id="brickCanvas"></canvas>
+                <div class="game-instructions" id="gameInstructions">
+                    USE ARROW KEYS TO MOVE<br>SPACE TO PAUSE
+                </div>
+                <div class="game-over-overlay" id="gameOver">
+                    <p>GAME OVER</p>
+                    <button id="playAgainBtn">PLAY AGAIN</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="przm-dialog" class="window maximized" style="display: none;">
+            <!-- Content here... -->
+            <div class="window-header">
+                <span class="window-title">PRZM Case Study</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="przm-dialog">□</button>
+                    <button class="close-btn" data-window="przm-dialog">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <button class="win95-submit back-btn" onclick="document.getElementById('przm-dialog').style.display='none'">← BACK</button>
+                <div class="case-stage">
+                    <!-- Project 1: Netflix -->
+                    <section class="case-project" data-case="przm" data-project="netflix">
+                        <h3 class="case-heading">Netflix</h3>
+                        <div class="media-9x16-row">
+                            <div class="media-card is-active" data-media="brief">
+                                <video src="assets/przm/brief.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-media="approach">
+                                <video src="assets/przm/approach.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-media="impact">
+                                <video src="assets/przm/impact.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">Built and scaled PRZM community programs and creator outreach. Focused on repeatable formats and onboarding that turned attention into members.</p>
+                        </div>
+                    </section>
+
+                    <!-- Project 2: Placeholder -->
+                    <section class="case-project" data-case="przm" data-project="second">
+                        <h3 class="case-heading">Project Title</h3>
+                        <div class="media-9x16-row">
+                            <div class="media-card is-active" data-media="brief">
+                                <video src="assets/przm/second-brief.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-media="approach">
+                                <video src="assets/przm/second-approach.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-media="impact">
+                                <video src="assets/przm/second-impact.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">Built and scaled PRZM community programs and creator outreach. Focused on repeatable formats and onboarding that turned attention into members.</p>
+                        </div>
+                    </section>
+
+                    <!-- Project 3: Single Media -->
+                    <section class="case-project" data-case="przm" data-project="third">
+                        <h3 class="case-heading">Third Project</h3>
+                        <div class="media-16x9">
+                            <video src="assets/przm/third.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">Brief for the third project goes here. This section uses a single 16x9 widescreen player.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="hoek-dialog" class="window maximized" style="display: none;">
+            <div class="window-header">
+                <span class="window-title">HOEK Case Study</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="hoek-dialog">□</button>
+                    <button class="close-btn" data-window="hoek-dialog">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <button class="win95-submit back-btn" onclick="document.getElementById('hoek-dialog').style.display='none'">← BACK</button>
+                <div class="case-stage">
+                    <!-- Section 1: 16x9 Video -->
+                    <section class="case-project" data-case="hoek" data-project="one">
+                        <h3 class="case-heading">Project One</h3>
+                        <div class="media-16x9">
+                            <video src="assets/hoek/one.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">HOEK Project One brief. Focusing on sustainable furniture design and digital-first brand expansion.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 2: 16x9 Video -->
+                    <section class="case-project" data-case="hoek" data-project="two">
+                        <h3 class="case-heading">Project Two</h3>
+                        <div class="media-16x9">
+                            <video src="assets/hoek/two.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">HOEK Project Two brief. Exploring modular living solutions for modern urban environments.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 3: Two Square Images -->
+                    <section class="case-project" data-case="hoek" data-project="three">
+                        <h3 class="case-heading">Project Three</h3>
+                        <div class="media-square-row">
+                            <div class="media-square">
+                                <img src="assets/hoek/three-a.png" alt="Project Three A">
+                                <div class="video-placeholder">[IMAGE]</div>
+                            </div>
+                            <div class="media-square">
+                                <img src="assets/hoek/three-b.png" alt="Project Three B">
+                                <div class="video-placeholder">[IMAGE]</div>
+                            </div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">HOEK Project Three brief. A visual deep-dive into the manufacturing process and craftsmanship.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 4: 6 Videos (2x3 grid) -->
+                    <section class="case-project" data-case="hoek" data-project="four">
+                        <h3 class="case-heading">Project Four</h3>
+                        <div class="media-9x16-grid">
+                            <div class="media-card">
+                                <video src="assets/hoek/four-1.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card">
+                                <video src="assets/hoek/four-2.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card">
+                                <video src="assets/hoek/four-3.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card">
+                                <video src="assets/hoek/four-4.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card">
+                                <video src="assets/hoek/four-5.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card">
+                                <video src="assets/hoek/four-6.mp4" muted loop playsinline preload="metadata"></video>
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">A comprehensive look at HOEK's visual identity across multiple formats, from social grids to large-scale physical installations.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="heatonist-dialog" class="window maximized" style="display: none;">
+            <div class="window-header">
+                <span class="window-title">HEATONIST Case Study</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="heatonist-dialog">□</button>
+                    <button class="close-btn" data-window="heatonist-dialog">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <button class="win95-submit back-btn" onclick="document.getElementById('heatonist-dialog').style.display='none'">← BACK</button>
+                <div class="case-stage">
+                    <!-- Project 1: one -->
+                    <section class="case-project" data-case="heatonist" data-project="one">
+                        <h3 class="case-heading">Project One</h3>
+                        <div class="media-9x16-single">
+                            <video src="assets/heatonist/one.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">HEATONIST Project One brief. Creating a community around hot sauce culture and discovery.</p>
+                        </div>
+                    </section>
+
+                    <!-- Project 2: two -->
+                    <section class="case-project" data-case="heatonist" data-project="two">
+                        <h3 class="case-heading">Project Two</h3>
+                        <div class="media-9x16-single">
+                            <video src="assets/heatonist/two.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">HEATONIST Project Two brief. Scaling digital presence through creator collaborations.</p>
+                        </div>
+                    </section>
+
+                    <!-- Project 3: three -->
+                    <section class="case-project" data-case="heatonist" data-project="three">
+                        <h3 class="case-heading">Project Three</h3>
+                        <div class="media-9x16-single">
+                            <video src="assets/heatonist/three.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">HEATONIST Project Three brief. Streamlining social-to-subscription funnels for recurring growth.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="choice-dialog" class="window maximized" style="display: none;">
+            <div class="window-header">
+                <span class="window-title">CHOICE Case Study</span>
+                <div class="header-btns">
+                    <button class="maximize-btn" data-window="choice-dialog">□</button>
+                    <button class="close-btn" data-window="choice-dialog">X</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <button class="win95-submit back-btn" onclick="document.getElementById('choice-dialog').style.display='none'">← BACK</button>
+                <div class="case-stage">
+                    <!-- Section 1: 16x9 Video -->
+                    <section class="case-project" data-case="choice" data-project="one">
+                        <h3 class="case-heading">Project One</h3>
+                        <div class="media-16x9">
+                            <video src="assets/choice/one.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">CHOICE Project One brief. Building a digital ecosystem for community-driven initiatives.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 2: 16x9 Video -->
+                    <section class="case-project" data-case="choice" data-project="two">
+                        <h3 class="case-heading">Project Two</h3>
+                        <div class="media-16x9">
+                            <video src="assets/choice/two.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="video-placeholder">[VIDEO]</div>
+                        </div>
+                        <div class="case-tabs">
+                            <button class="win-btn is-active" data-tab="brief">BRIEF</button>
+                            <button class="win-btn" data-tab="approach">APPROACH</button>
+                            <button class="win-btn" data-tab="impact">IMPACT</button>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">CHOICE Project Two brief. Streamlining cross-platform communication for distributed teams.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <button id="start-btn">Start</button>
+        <div id="clock">00:00:00</div>
+    </div>
+
+    <script src="draggable.js"></script>
+    <script src="system.js"></script>
+    <script src="bricks.js"></script>
+</body>
+</html>
