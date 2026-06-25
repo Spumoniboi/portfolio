@@ -72,6 +72,8 @@ body, html {
     color: white;
     text-align: center;
     user-select: none;
+    touch-action: manipulation; /* kill the iOS double-tap-to-zoom delay */
+    cursor: pointer;
 }
 
 .icon-img {
@@ -98,7 +100,7 @@ body, html {
     box-shadow: inset 1px 1px var(--win-border-light), inset -1px -1px var(--win-border-dark);
     min-width: 250px;
     min-height: 100px;
-    max-height: 90vh; /* Prevent any window from exceeding viewport height */
+    max-height: calc(100vh - 50px); /* Stay above taskbar, never overflow */
     display: flex;
     flex-direction: column;
 }
@@ -170,6 +172,7 @@ body, html {
     left: 0 !important;
     width: 100% !important;
     height: calc(100% - 40px) !important;
+    max-height: calc(100% - 40px) !important;
     z-index: 9998 !important;
 }
 
@@ -497,10 +500,21 @@ body, html {
     overflow: hidden;
 }
 
-.media-card video, .media-16x9 video, .media-square img {
+.media-card video, .media-16x9 video, .media-9x16-single video, .media-square img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Vimeo iframe embeds */
+.vimeo-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: auto;
 }
 
 .video-placeholder {
@@ -541,6 +555,63 @@ body, html {
     }
     .media-square-row {
         grid-template-columns: 1fr;
+    }
+    .case-heading {
+        font-size: 20px;
+    }
+    .case-tabs {
+        flex-wrap: wrap;
+    }
+    .win-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+}
+
+/* ----- Mobile / small viewport adjustments ----- */
+@media (max-width: 700px) {
+    body, html {
+        font-size: 16px;
+    }
+    .icon {
+        width: 70px;
+        height: 75px;
+        margin-bottom: 12px;
+    }
+    .icon-img {
+        font-size: 34px;
+    }
+    .icon-label {
+        font-size: 12px;
+    }
+
+    /* Constrain any non-maximized window to viewport so nothing hides off-screen */
+    .window:not(.maximized) {
+        max-width: calc(100vw - 20px);
+    }
+
+    /* The two big "home" windows: take over the screen sensibly on mobile */
+    #projects, #about {
+        top: 5px !important;
+        left: 5px !important;
+        right: 5px !important;
+        width: calc(100vw - 10px) !important;
+        max-width: calc(100vw - 10px) !important;
+        max-height: calc(100vh - 60px) !important;
+    }
+    #about {
+        /* Stack about under projects on mobile so both are usable */
+        top: 380px !important;
+        height: auto !important;
+    }
+    .about-window {
+        height: auto !important;
+        max-height: calc(60vh) !important;
+    }
+
+    /* Centered single-column desktop icons */
+    #desktop {
+        padding: 10px;
     }
 }
 

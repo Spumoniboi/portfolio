@@ -213,24 +213,21 @@ function resetGame() {
     setTimeout(startGame, 50);
 }
 
+function stopGame() {
+    gameRunning = false;
+    isPaused = false;
+    if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+    }
+    if (gameOverOverlay) gameOverOverlay.style.display = "none";
+    if (instructions) instructions.style.display = "none";
+}
+
 if (playAgainBtn) {
     playAgainBtn.addEventListener("click", resetGame);
 }
 
-// Global hooks
+// Global hooks — game starts/stops only via window open/close in system.js
 window.startGame = startGame;
-
-// Auto-start check
-function checkAndStart() {
-    const gameWin = document.getElementById('brick-breaker');
-    if (gameWin && window.getComputedStyle(gameWin).display !== 'none') {
-        startGame();
-    }
-}
-
-// Double check initialization
-if (document.readyState === 'complete') {
-    checkAndStart();
-} else {
-    window.addEventListener('load', checkAndStart);
-}
+window.stopGame = stopGame;

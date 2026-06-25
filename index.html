@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio OS</title>
+    <title>Simon Jewett — Portfolio OS</title>
+    <meta name="description" content="Creative strategist, content producer, and community builder. Senior Vibe Curator. Portfolio of work at HEATONIST, PRZM, Hoek Home, and Choice by Kingdom Trust.">
+    <meta name="author" content="Simon Jewett">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:title" content="Simon Jewett — Portfolio OS">
+    <meta property="og:description" content="Creative strategist, content producer, and community builder. Portfolio of work at HEATONIST, PRZM, Hoek Home, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simon Jewett — Portfolio OS">
+    <meta name="twitter:description" content="Creative strategist, content producer, and community builder.">
+    <meta name="twitter:image" content="profile.png">
+
+    <!-- Favicon (inline SVG, floppy disk vibe) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BE%3C/text%3E%3C/svg%3E">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,7 +53,8 @@
             <div class="icon-img">🎮</div>
             <span class="icon-label">BRICK.exe</span>
         </div>
-        <!-- Windows -->
+
+        <!-- Projects window (open by default — acts as the home screen) -->
         <div id="projects" class="window" style="top: 5%; left: 120px; width: 400px;">
             <div class="window-header">
                 <span class="window-title">PROJECTS.exe</span>
@@ -47,7 +64,7 @@
                 </div>
             </div>
             <div class="window-content">
-                <p><strong>C:\PROJECTS> dir</strong></p>
+                <p><strong>C:\PROJECTS&gt; dir</strong></p>
                 <ul class="project-list">
                     <li>
                         <span class="project-year">2025</span> - <strong class="project-link" onclick="openWindow('heatonist-dialog')">HEATONIST</strong>
@@ -62,13 +79,14 @@
                         <p class="project-desc">Produced 100+ organic videos, increasing social following by 25%.</p>
                     </li>
                     <li>
-                        <span class="project-year">2022</span> - <strong class="project-link" onclick="openWindow('choice-dialog')">CHOICE</strong>
+                        <span class="project-year">2022</span> - <strong class="project-link" onclick="openWindow('choice-dialog')">CHOICE BY KINGDOM TRUST</strong>
                         <p class="project-desc">Built 30K+ community from scratch across TikTok, Twitter, and Discord.</p>
                     </li>
                 </ul>
             </div>
         </div>
 
+        <!-- About window (open by default — elevator pitch) -->
         <div id="about" class="window about-window" style="top: 5%; left: 70%;">
             <div class="window-header">
                 <span class="window-title">about.txt</span>
@@ -81,13 +99,14 @@
                 <div class="about-container">
                     <img src="profile.png" alt="Simon Jewett" class="about-img">
                     <div class="about-text">
-                        <p>I help brands grow their digital footprint and try to make the internet a little less boring. That can look like social media or community building, from strategy to shooting and editing content, or working with influencers to make things people actually want to watch. I’ve helped rack up millions of social engagements while building real, engaged communities and scroll-stopping content that doesn’t feel forced. I’ve been nicknamed the Senior Vibe Curator more times than i can count, but at the core, content, culture, and community are the cornerstones of my work. Helping people and brands build those things and earn attention is what i enjoy most.</p>
+                        <p>I help brands grow their digital footprint and try to make the internet a little less boring. That can look like social media or community building, from strategy to shooting and editing content, or working with influencers to make things people actually want to watch. I've helped rack up millions of social engagements while building real, engaged communities and scroll-stopping content that doesn't feel forced. I've been nicknamed the Senior Vibe Curator more times than i can count, but at the core, content, culture, and community are the cornerstones of my work. Helping people and brands build those things and earn attention is what i enjoy most.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="camera" class="window" style="top: 50%; left: 15%; width: 480px;">
+        <!-- Camera window (closed by default) -->
+        <div id="camera" class="window" style="display: none; top: 50%; left: 15%; width: 480px;">
             <div class="window-header">
                 <span class="window-title">CAMERA.mov</span>
                 <div class="header-btns">
@@ -102,6 +121,7 @@
             </div>
         </div>
 
+        <!-- Contact window (closed by default) -->
         <div id="contact" class="window" style="display: none; top: 40%; left: 45%; width: 300px;">
             <div class="window-header">
                 <span class="window-title">contact.txt</span>
@@ -130,7 +150,8 @@
             </div>
         </div>
 
-        <div id="brick-breaker" class="window" style="top: 20%; left: 30%; width: 440px;">
+        <!-- Brick game (closed by default — game only starts when opened) -->
+        <div id="brick-breaker" class="window" style="display: none; top: 20%; left: 30%; width: 440px;">
             <div class="window-header">
                 <span class="window-title">BRICK.exe</span>
                 <div class="header-btns">
@@ -150,8 +171,10 @@
             </div>
         </div>
 
+        <!-- ============================================== -->
+        <!-- PRZM CASE STUDY                                 -->
+        <!-- ============================================== -->
         <div id="przm-dialog" class="window maximized" style="display: none;">
-            <!-- Content here... -->
             <div class="window-header">
                 <span class="window-title">PRZM Case Study</span>
                 <div class="header-btns">
@@ -164,18 +187,15 @@
                 <div class="case-stage">
                     <!-- Project 1: Netflix -->
                     <section class="case-project" data-case="przm" data-project="netflix">
-                        <h3 class="case-heading">Netflix</h3>
+                        <h3 class="case-heading">NETFLIX</h3>
                         <div class="media-9x16-row">
-                            <div class="media-card is-active" data-media="brief">
-                                <video src="assets/przm/brief.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card is-active" data-media="brief" data-vimeo-id="VIMEO_REPLACE_PRZM_NETFLIX_BRIEF">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card" data-media="approach">
-                                <video src="assets/przm/approach.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-media="approach" data-vimeo-id="VIMEO_REPLACE_PRZM_NETFLIX_APPROACH">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card" data-media="impact">
-                                <video src="assets/przm/impact.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-media="impact" data-vimeo-id="VIMEO_REPLACE_PRZM_NETFLIX_IMPACT">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
                         </div>
@@ -185,24 +205,21 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">Built and scaled PRZM community programs and creator outreach. Focused on repeatable formats and onboarding that turned attention into members.</p>
+                            <p class="case-copy">Netflix Queue, Netflix's premium digital and print publication, rolled out its new Instagram and TikTok accounts and needed agency support to take them to the next level — leading overall strategy, concept development, and creative production.</p>
                         </div>
                     </section>
 
-                    <!-- Project 2: Placeholder -->
+                    <!-- Project 2: Amazon -->
                     <section class="case-project" data-case="przm" data-project="second">
-                        <h3 class="case-heading">Project Title</h3>
+                        <h3 class="case-heading">AMAZON</h3>
                         <div class="media-9x16-row">
-                            <div class="media-card is-active" data-media="brief">
-                                <video src="assets/przm/second-brief.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card is-active" data-media="brief" data-vimeo-id="VIMEO_REPLACE_PRZM_AMAZON_BRIEF">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card" data-media="approach">
-                                <video src="assets/przm/second-approach.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-media="approach" data-vimeo-id="VIMEO_REPLACE_PRZM_AMAZON_APPROACH">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card" data-media="impact">
-                                <video src="assets/przm/second-impact.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-media="impact" data-vimeo-id="VIMEO_REPLACE_PRZM_AMAZON_IMPACT">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
                         </div>
@@ -212,15 +229,14 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">Built and scaled PRZM community programs and creator outreach. Focused on repeatable formats and onboarding that turned attention into members.</p>
+                            <p class="case-copy">The Amazon Influencer Program reached out to PRZM to develop a next-gen, social-first strategy and produce content that resonated with Gen Z audiences across TikTok and Instagram.</p>
                         </div>
                     </section>
 
-                    <!-- Project 3: Single Media -->
+                    <!-- Project 3: PRZM Community -->
                     <section class="case-project" data-case="przm" data-project="third">
-                        <h3 class="case-heading">Third Project</h3>
-                        <div class="media-16x9">
-                            <video src="assets/przm/third.mp4" muted loop playsinline preload="metadata"></video>
+                        <h3 class="case-heading">PRZM COMMUNITY</h3>
+                        <div class="media-16x9" data-vimeo-id="VIMEO_REPLACE_PRZM_COMMUNITY">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -229,13 +245,44 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">Brief for the third project goes here. This section uses a single 16x9 widescreen player.</p>
+                            <p class="case-copy">PRZM activated its earned Gen Z community of creators, future creators, and influencers through a dynamic, multichannel strategy. The goal was to grow the community, foster deeper engagement, and build partnerships for brand content creation, amplifying reach and influence.</p>
+                        </div>
+                    </section>
+
+                    <!-- Project 4: SOCIAL POSTS -->
+                    <section class="case-project" data-case="przm" data-project="fourth">
+                        <h3 class="case-heading">SOCIAL POSTS</h3>
+                        <div class="media-9x16-grid">
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_PRZM_SOCIAL_1">
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_PRZM_SOCIAL_2">
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_PRZM_SOCIAL_3">
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_PRZM_SOCIAL_4">
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_PRZM_SOCIAL_5">
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_PRZM_SOCIAL_6">
+                                <div class="video-placeholder">[VIDEO]</div>
+                            </div>
+                        </div>
+                        <div class="case-body">
+                            <p class="case-copy">This is a compilation of the highest-performing social posts that I have made at PRZM.</p>
                         </div>
                     </section>
                 </div>
             </div>
         </div>
 
+        <!-- ============================================== -->
+        <!-- HOEK CASE STUDY                                 -->
+        <!-- ============================================== -->
         <div id="hoek-dialog" class="window maximized" style="display: none;">
             <div class="window-header">
                 <span class="window-title">HOEK Case Study</span>
@@ -247,11 +294,9 @@
             <div class="window-content">
                 <button class="win95-submit back-btn" onclick="document.getElementById('hoek-dialog').style.display='none'">← BACK</button>
                 <div class="case-stage">
-                    <!-- Section 1: 16x9 Video -->
                     <section class="case-project" data-case="hoek" data-project="one">
-                        <h3 class="case-heading">Project One</h3>
-                        <div class="media-16x9">
-                            <video src="assets/hoek/one.mp4" muted loop playsinline preload="metadata"></video>
+                        <h3 class="case-heading">FAREWELL TO IKEA</h3>
+                        <div class="media-16x9" data-vimeo-id="VIMEO_REPLACE_HOEK_FAREWELL">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -260,15 +305,13 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">HOEK Project One brief. Focusing on sustainable furniture design and digital-first brand expansion.</p>
+                            <p class="case-copy">This campaign aimed to position Hoek Home as a disruptive, innovative player in the furniture space by leveraging guerrilla marketing tactics and playful competition with IKEA. It sought to highlight Hoek's patented tool-free, quick-assembly furniture while emphasizing the stark contrast with IKEA's reputation for stressful, complex assembly processes.</p>
                         </div>
                     </section>
 
-                    <!-- Section 2: 16x9 Video -->
                     <section class="case-project" data-case="hoek" data-project="two">
-                        <h3 class="case-heading">Project Two</h3>
-                        <div class="media-16x9">
-                            <video src="assets/hoek/two.mp4" muted loop playsinline preload="metadata"></video>
+                        <h3 class="case-heading">STORY OF HOEK</h3>
+                        <div class="media-16x9" data-vimeo-id="VIMEO_REPLACE_HOEK_STORY">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -277,20 +320,19 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">HOEK Project Two brief. Exploring modular living solutions for modern urban environments.</p>
+                            <p class="case-copy">"The Story of Hoek" was a video created to educate customers about Hoek Home's origins as a small furniture company striving to compete with industry giants like IKEA and Floyd Detroit. The video targeted new customers while also being used as an ad to attract potential customers at the top of the marketing funnel.</p>
                         </div>
                     </section>
 
-                    <!-- Section 3: Two Square Images -->
                     <section class="case-project" data-case="hoek" data-project="three">
-                        <h3 class="case-heading">Project Three</h3>
+                        <h3 class="case-heading">SHANTELL MARTIN COLLABORATION</h3>
                         <div class="media-square-row">
                             <div class="media-square">
-                                <img src="assets/hoek/three-a.png" alt="Project Three A">
+                                <img src="assets/hoek/three-a.png" alt="Shantell Martin x Hoek installation A" onerror="this.style.display='none'">
                                 <div class="video-placeholder">[IMAGE]</div>
                             </div>
                             <div class="media-square">
-                                <img src="assets/hoek/three-b.png" alt="Project Three B">
+                                <img src="assets/hoek/three-b.png" alt="Shantell Martin x Hoek installation B" onerror="this.style.display='none'">
                                 <div class="video-placeholder">[IMAGE]</div>
                             </div>
                         </div>
@@ -300,47 +342,43 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">HOEK Project Three brief. A visual deep-dive into the manufacturing process and craftsmanship.</p>
+                            <p class="case-copy">What began as a simple DM to Shantell Martin evolved into a full collaboration, which then led to the creation of the artist residency program at Hoek Home. The program was designed to bring new consumers into the Hoek Home marketing funnel while celebrating art and design.</p>
                         </div>
                     </section>
 
-                    <!-- Section 4: 6 Videos (2x3 grid) -->
                     <section class="case-project" data-case="hoek" data-project="four">
-                        <h3 class="case-heading">Project Four</h3>
+                        <h3 class="case-heading">SOCIAL POSTS</h3>
                         <div class="media-9x16-grid">
-                            <div class="media-card">
-                                <video src="assets/hoek/four-1.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_HOEK_SOCIAL_1">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card">
-                                <video src="assets/hoek/four-2.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_HOEK_SOCIAL_2">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card">
-                                <video src="assets/hoek/four-3.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_HOEK_SOCIAL_3">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card">
-                                <video src="assets/hoek/four-4.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_HOEK_SOCIAL_4">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card">
-                                <video src="assets/hoek/four-5.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_HOEK_SOCIAL_5">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
-                            <div class="media-card">
-                                <video src="assets/hoek/four-6.mp4" muted loop playsinline preload="metadata"></video>
+                            <div class="media-card" data-vimeo-id="VIMEO_REPLACE_HOEK_SOCIAL_6">
                                 <div class="video-placeholder">[VIDEO]</div>
                             </div>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">A comprehensive look at HOEK's visual identity across multiple formats, from social grids to large-scale physical installations.</p>
+                            <p class="case-copy">This is a compilation of the highest-performing social posts that I have made at Hoek Home.</p>
                         </div>
                     </section>
                 </div>
             </div>
         </div>
 
+        <!-- ============================================== -->
+        <!-- HEATONIST CASE STUDY                            -->
+        <!-- ============================================== -->
         <div id="heatonist-dialog" class="window maximized" style="display: none;">
             <div class="window-header">
                 <span class="window-title">HEATONIST Case Study</span>
@@ -352,11 +390,9 @@
             <div class="window-content">
                 <button class="win95-submit back-btn" onclick="document.getElementById('heatonist-dialog').style.display='none'">← BACK</button>
                 <div class="case-stage">
-                    <!-- Project 1: one -->
                     <section class="case-project" data-case="heatonist" data-project="one">
                         <h3 class="case-heading">Project One</h3>
-                        <div class="media-9x16-single">
-                            <video src="assets/heatonist/one.mp4" muted loop playsinline preload="metadata"></video>
+                        <div class="media-9x16-single" data-vimeo-id="VIMEO_REPLACE_HEATONIST_1">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -369,11 +405,9 @@
                         </div>
                     </section>
 
-                    <!-- Project 2: two -->
                     <section class="case-project" data-case="heatonist" data-project="two">
                         <h3 class="case-heading">Project Two</h3>
-                        <div class="media-9x16-single">
-                            <video src="assets/heatonist/two.mp4" muted loop playsinline preload="metadata"></video>
+                        <div class="media-9x16-single" data-vimeo-id="VIMEO_REPLACE_HEATONIST_2">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -386,11 +420,9 @@
                         </div>
                     </section>
 
-                    <!-- Project 3: three -->
                     <section class="case-project" data-case="heatonist" data-project="three">
                         <h3 class="case-heading">Project Three</h3>
-                        <div class="media-9x16-single">
-                            <video src="assets/heatonist/three.mp4" muted loop playsinline preload="metadata"></video>
+                        <div class="media-9x16-single" data-vimeo-id="VIMEO_REPLACE_HEATONIST_3">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -406,9 +438,12 @@
             </div>
         </div>
 
+        <!-- ============================================== -->
+        <!-- CHOICE CASE STUDY                               -->
+        <!-- ============================================== -->
         <div id="choice-dialog" class="window maximized" style="display: none;">
             <div class="window-header">
-                <span class="window-title">CHOICE Case Study</span>
+                <span class="window-title">CHOICE BY KINGDOM TRUST Case Study</span>
                 <div class="header-btns">
                     <button class="maximize-btn" data-window="choice-dialog">□</button>
                     <button class="close-btn" data-window="choice-dialog">X</button>
@@ -417,11 +452,9 @@
             <div class="window-content">
                 <button class="win95-submit back-btn" onclick="document.getElementById('choice-dialog').style.display='none'">← BACK</button>
                 <div class="case-stage">
-                    <!-- Section 1: 16x9 Video -->
                     <section class="case-project" data-case="choice" data-project="one">
-                        <h3 class="case-heading">Project One</h3>
-                        <div class="media-16x9">
-                            <video src="assets/choice/one.mp4" muted loop playsinline preload="metadata"></video>
+                        <h3 class="case-heading">BLINKO MIAMI</h3>
+                        <div class="media-16x9" data-vimeo-id="VIMEO_REPLACE_CHOICE_BLINKO">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -430,15 +463,13 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">CHOICE Project One brief. Building a digital ecosystem for community-driven initiatives.</p>
+                            <p class="case-copy">At Bitcoin Miami 2020, Choice aimed to dominate the social buzz with "Blinko Miami," an interactive, gamified activation that encouraged engagement both at the convention and online. The primary audience included convention attendees, while the secondary audience comprised those unable to attend but eager to participate virtually.</p>
                         </div>
                     </section>
 
-                    <!-- Section 2: 16x9 Video -->
                     <section class="case-project" data-case="choice" data-project="two">
-                        <h3 class="case-heading">Project Two</h3>
-                        <div class="media-16x9">
-                            <video src="assets/choice/two.mp4" muted loop playsinline preload="metadata"></video>
+                        <h3 class="case-heading">RETIREMENT ZOMBIES</h3>
+                        <div class="media-16x9" data-vimeo-id="VIMEO_REPLACE_CHOICE_ZOMBIES">
                             <div class="video-placeholder">[VIDEO]</div>
                         </div>
                         <div class="case-tabs">
@@ -447,7 +478,7 @@
                             <button class="win-btn" data-tab="impact">IMPACT</button>
                         </div>
                         <div class="case-body">
-                            <p class="case-copy">CHOICE Project Two brief. Streamlining cross-platform communication for distributed teams.</p>
+                            <p class="case-copy">The "Choice Retirement Zombies" campaign was designed to educate customers and potential customers about how their old 401(k)s, often left dormant and "eaten" by company fees, could instead be revitalized through a Choice Roth IRA with access to Bitcoin. The campaign targeted job changers, Bitcoin enthusiasts, and individuals looking to kickstart their retirement savings.</p>
                         </div>
                     </section>
                 </div>
